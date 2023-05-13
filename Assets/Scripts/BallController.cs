@@ -82,6 +82,14 @@ public class BallController : MonoBehaviour, IPointerDownHandler
                 aimWorld.gameObject.SetActive(false);
                 powerSlider.value = 0;
             }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                shootingMode = false;
+                aimLine.gameObject.SetActive(false);
+                aimWorld.gameObject.SetActive(false);
+                powerSlider.value = 0;
+            }
         }
     }
 
