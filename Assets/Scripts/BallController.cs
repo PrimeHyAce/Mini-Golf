@@ -14,6 +14,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
     [SerializeField] LineRenderer aimLine;
     [SerializeField] Transform aimWorld;
     [SerializeField] Slider powerSlider;
+    [SerializeField] GameObject fillSlider;
     [SerializeField] GameObject readyIndicator;
     bool shoot;
     bool shootingMode;
@@ -40,6 +41,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
             { 
                 aimLine.gameObject.SetActive(true);
                 aimWorld.gameObject.SetActive(true);
+                fillSlider.SetActive(true);
                 plane = new Plane(Vector3.up, this.transform.position);
                 readyIndicator.SetActive(false);
             }
@@ -87,6 +89,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
                 aimLine.gameObject.SetActive(false);
                 aimWorld.gameObject.SetActive(false);
                 powerSlider.value = 0;
+                fillSlider.SetActive(false);
             }
 
             if (Input.GetMouseButtonDown(1))
@@ -95,6 +98,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
                 aimLine.gameObject.SetActive(false);
                 aimWorld.gameObject.SetActive(false);
                 powerSlider.value = 0;
+                fillSlider.SetActive(false);
             }
         }
     }
