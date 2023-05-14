@@ -14,6 +14,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
     [SerializeField] LineRenderer aimLine;
     [SerializeField] Transform aimWorld;
     [SerializeField] Slider powerSlider;
+    [SerializeField] GameObject readyIndicator;
     bool shoot;
     bool shootingMode;
     float forceFactor;
@@ -28,6 +29,10 @@ public class BallController : MonoBehaviour, IPointerDownHandler
 
     public UnityEvent<int> onBallShooted = new UnityEvent<int>();
 
+    private void Start() {
+        readyIndicator.SetActive(false);
+    }
+
     private void Update() {
         if (shootingMode)
         {
@@ -36,6 +41,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
                 aimLine.gameObject.SetActive(true);
                 aimWorld.gameObject.SetActive(true);
                 plane = new Plane(Vector3.up, this.transform.position);
+                readyIndicator.SetActive(false);
             }
             else if (Input.GetMouseButton(0))
             {
@@ -101,6 +107,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
             AddForce(forceDirection * force * forceFactor, ForceMode.Impulse);
             shootCount += 1;
             onBallShooted.Invoke(shootCount);
+            readyIndicator.SetActive(false);
         }
 
         else 
@@ -108,6 +115,12 @@ public class BallController : MonoBehaviour, IPointerDownHandler
             if (rb.velocity.sqrMagnitude > 0.01f)
             {
                 rb.velocity *= 0.99f;
+            }
+            else if (!IsMove())
+            {
+                readyIndicator.SetActive(true);
+                readyIndicator.transform.position = transform.position + new Vector3(0, -0.45f, 0);
+                readyIndicator.transform.rotation = Quaternion.Euler(90, 0, 0);
             }
         }
 
