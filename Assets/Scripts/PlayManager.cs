@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using TMPro;
+using UnityEngine.Events;
 
 public class PlayManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayManager : MonoBehaviour
     bool isBallTeleporting;
     bool isGoal;
     Vector3 lastBallPosition;
+
+    public UnityEvent OnWinSound;
 
     private void OnEnable() {
         ballController.onBallShooted.AddListener(UpdateShootCount);
@@ -43,6 +46,7 @@ public class PlayManager : MonoBehaviour
     {
         isGoal = true;
         ballController.enabled = false;
+        OnWinSound.Invoke();
 
         finishWindow.gameObject.SetActive(true);
         finishText.text = "Good Job! \nPutts:" + ballController.ShootCount;

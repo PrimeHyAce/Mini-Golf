@@ -29,6 +29,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
     public int ShootCount { get => shootCount; }
 
     public UnityEvent<int> onBallShooted = new UnityEvent<int>();
+    public UnityEvent OnShootSound;
 
     private void Start() {
         readyIndicator.SetActive(false);
@@ -90,6 +91,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
                 aimWorld.gameObject.SetActive(false);
                 powerSlider.value = 0;
                 fillSlider.SetActive(false);
+                OnShootSound.Invoke();
             }
 
             if (Input.GetMouseButtonDown(1))
