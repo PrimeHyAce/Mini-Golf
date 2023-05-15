@@ -49,7 +49,7 @@ public class PlayManager : MonoBehaviour
         OnWinSound.Invoke();
 
         finishWindow.gameObject.SetActive(true);
-        finishText.text = "Good Job! \nPutts: " + ballController.ShootCount;
+        finishText.text = "Good Job! \nHole in " + ballController.ShootCount;
     }
 
     public void OnBallOutside()
