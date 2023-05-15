@@ -130,10 +130,11 @@ public class BallController : MonoBehaviour, IPointerDownHandler
             }
         }
 
-        if (rb.velocity.sqrMagnitude < 0.01f && rb.velocity.sqrMagnitude != 0) 
+        if (rb.velocity.sqrMagnitude < 0.01f && rb.velocity.sqrMagnitude > 0) 
         {
             rb.velocity = Vector3.zero;
-            rb.useGravity = false;
+            //rb.useGravity = false;
+            rb.angularVelocity = Vector3.zero;
         }
         
         else if (rb.velocity.sqrMagnitude > 0.01f)
@@ -144,7 +145,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
 
     public bool IsMove()
     {
-        return rb.velocity != Vector3.zero;
+        return rb.velocity.sqrMagnitude > 0.01f;
     }
 
     public void AddForce(Vector3 force, ForceMode forceMode = ForceMode.Impulse)
