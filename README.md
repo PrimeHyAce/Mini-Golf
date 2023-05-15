@@ -9,8 +9,7 @@
 - Right click to cancel your shot.
 - Click and drag with the left mouse button outside of the ball to move the camera viewpoint.
 - When the ball is idle and ready to shoot, an indicator circle will appear around the ball, and you can:
-  1. Re-drag the ball
-  2. Re-adjust the camera position
+  Re-drag the ball and Re-adjust the camera position
 - You will face obstacles along the way, have fun and good luck!
 
 
