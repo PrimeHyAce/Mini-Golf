@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: facbedacda07713499a3739555808efa
+guid: 52b12dadc28407f4fb131c82ff135564
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Font Awesome 5 Free
+  - Nougat
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
