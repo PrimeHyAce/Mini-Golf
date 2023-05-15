@@ -27,7 +27,7 @@ Level 2
 
 
 If you want to play the game, you can download it from the release or simply get it from the following link:
-https://drive.google.com/file/d/1KsX5r-ked0sDcJ4pHX2dR4te4WNH01Yk/view?usp=sharing
+https://drive.google.com/file/d/1nLJMH9l25XL69TOUn8Qs0PjHCe_C_yMx/view?usp=sharing
   
  
  
