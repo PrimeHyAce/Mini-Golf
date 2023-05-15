@@ -45,7 +45,7 @@ public class PlayManager : MonoBehaviour
         ballController.enabled = false;
 
         finishWindow.gameObject.SetActive(true);
-        finishText.text = "Finished! \n" + ballController.ShootCount + " Shoots";
+        finishText.text = "Good Job! \nPutts:" + ballController.ShootCount;
     }
 
     public void OnBallOutside()
