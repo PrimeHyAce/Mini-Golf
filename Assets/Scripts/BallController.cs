@@ -60,7 +60,7 @@ public class BallController : MonoBehaviour, IPointerDownHandler
                 var pointerDirection = ballViewportPos - mouseViewportPosition;
                 pointerDirection.z = 0;
                 pointerDirection *= Camera.main.aspect;
-                pointerDirection.z = Mathf.Clamp(pointerDirection.magnitude, -0.5f, 0.5f);
+                pointerDirection.z = Mathf.Clamp(pointerDirection.z, -0.5f, 0.5f);
                 forceFactor = pointerDirection.magnitude * 2;
                 
                 //aim visual
